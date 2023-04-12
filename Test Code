@@ -1,0 +1,133 @@
+#include <Servo.h>
+int blinkDelayVal = 30;
+Servo servo1;           
+Servo servo2;
+Servo servo3;
+Servo servo4;
+
+void setup() {
+  
+    servo1.attach(3);       //servo headers on pin 3, 5, 6, and 9
+    servo2.attach(5);
+    servo3.attach(6);
+    servo4.attach(9);
+    Serial.begin(9600);
+    pinMode(2, OUTPUT);     //built in LEDs on pins 2-9
+    pinMode(3, OUTPUT);
+    pinMode(4, OUTPUT);
+    pinMode(5, OUTPUT);
+    pinMode(6, OUTPUT);
+    pinMode(7, OUTPUT);
+    pinMode(8, OUTPUT);
+    pinMode(9, OUTPUT);
+    pinMode(10, INPUT_PULLUP);  //built in buttons on pins 10,11, and 12
+    pinMode(11, INPUT_PULLUP);
+    pinMode(12, INPUT_PULLUP);
+
+
+}
+a
+void loop() {
+  
+ledTest();
+//servoTestLoop();
+//potTestLoop();
+//buttonTestLoop();
+//sensorTestLoop();
+
+}
+
+void ledTest(){
+digitalWrite(2, HIGH);
+delay(blinkDelayVal);
+digitalWrite(2, LOW);
+delay(blinkDelayVal);
+digitalWrite(3, HIGH);
+delay(blinkDelayVal);
+digitalWrite(3, LOW);
+delay(blinkDelayVal);
+digitalWrite(4, HIGH);
+delay(blinkDelayVal);
+digitalWrite(4, LOW);
+delay(blinkDelayVal);
+digitalWrite(5, HIGH);
+delay(blinkDelayVal);
+digitalWrite(5, LOW);
+delay(blinkDelayVal);
+digitalWrite(6, HIGH);
+delay(blinkDelayVal);
+digitalWrite(6, LOW);
+delay(blinkDelayVal);
+digitalWrite(7, HIGH);
+delay(blinkDelayVal);
+digitalWrite(7, LOW);
+delay(blinkDelayVal);
+digitalWrite(8, HIGH);
+delay(blinkDelayVal);
+digitalWrite(8, LOW);
+delay(blinkDelayVal);
+digitalWrite(9, HIGH);
+delay(blinkDelayVal);
+digitalWrite(9, LOW);
+delay(blinkDelayVal);
+}
+
+void servoTestLoop(){
+ for( int i = 0; i <= 255; i++){
+ servo1.write(i);
+ servo2.write(i);
+ servo3.write(i);
+ servo4.write(i);
+ delay(10);
+ }
+
+}
+
+void potTestLoop(){
+  Serial.print("Pot 1: ");            // Built in Potentiometers on Analog 0, 1, and 2
+Serial.println(analogRead(0));
+Serial.print("Pot 2: ");
+Serial.println(analogRead(1));
+Serial.print("Pot 3: ");
+Serial.println(analogRead(2));
+}
+
+void buttonTestLoop(){
+  if (digitalRead(10) == LOW){
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);  
+  }
+  if (digitalRead(10) == HIGH){
+  digitalWrite(2, LOW);
+  digitalWrite(3, LOW);    
+  }
+  if (digitalRead(11) == LOW){
+  digitalWrite(4, HIGH);
+  digitalWrite(5, HIGH);  
+  }
+  if (digitalRead(11) == HIGH){
+  digitalWrite(4, LOW);
+  digitalWrite(5, LOW);    
+  }
+    if (digitalRead(12) == LOW){
+  digitalWrite(6, HIGH);
+  digitalWrite(7, HIGH);  
+  }
+  if (digitalRead(12)== HIGH){
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);    
+  }
+
+}
+void sensorTestLoop() {
+//Serial.print("Sensor 1: ");            // Built in Potentiometers on Analog 0, 1, and 2
+//Serial.println(analogRead(3));
+//Serial.print("Sensor 2: ");
+//Serial.println(analogRead(4));
+//Serial.print("Sensor 3: ");
+//Serial.println(analogRead(5));
+//Serial.print("Sensor 4: ");
+//Serial.println(analogRead(6));
+}
+
+
