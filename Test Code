@@ -29,7 +29,7 @@ void setup() {
 
 void loop() {
   
-ledTest();
+//ledTest();
 //servoTestLoop();
 //potTestLoop();
 //buttonTestLoop();
